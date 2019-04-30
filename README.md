@@ -1,4 +1,10 @@
-Starts TeamCity 2018.2.4 in docker-compose with 2 nodes and one build agent, on Postgres database.
+Starts TeamCity 2018.2.4 in docker-compose.
+
+Don't forget to give at least 4Gb of RAM to your docker engine.
+
+- Uses Postgres DB (`psql -p5433 -hlocalhost -Utest -dbuildserver`, password `test`)
+- Starts 3 servers: primary, [running-builds node](https://confluence.jetbrains.com/display/TCD18/Configuring+Running+Builds+Node), [secondary node](https://confluence.jetbrains.com/display/TCD18/Configuring+Secondary+Node).
+- And, one build agent
 
 To start:
 
@@ -13,4 +19,6 @@ To shutdown
     docker-compose down
 
 For volumes and details see `docker-compose.yml`
+
+
 
